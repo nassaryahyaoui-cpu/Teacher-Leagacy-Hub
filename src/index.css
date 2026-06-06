@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cedarville+Cursive&family=Parisienne&family=Bad+Script&family=Playwrite+FR+Trad:wght@100..400&family=Playwrite+FR+Moderne:wght@100..400&family=Playwrite+DE+Grund:wght@100..400&family=Comic+Neue:wght@400;700&family=Andika:wght@400;700&family=Fredoka:wght@400;600;700&family=Lexend:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-cursive: "Cedarville Cursive", cursive;
+  --font-parisienne: "Parisienne", cursive;
+  --font-badscript: "Bad Script", cursive;
+  --font-ecolier-trad: "Playwrite FR Trad", cursive;
+  --font-ecolier-mod: "Playwrite FR Moderne", cursive;
+  --font-ecolier-base: "Playwrite DE Grund", cursive;
+  --font-comic: "Comic Neue", cursive;
+  --font-andika: "Andika", sans-serif;
+  --font-fredoka: "Fredoka", sans-serif;
+  --font-lexend: "Lexend", sans-serif;
+}
+
+@layer base {
+  :root {
+    --primary: #FF6B35;
+    --secondary: #FFD166;
+    --accent: #06D6A0;
+    --blue: #118AB2;
+    --purple: #9B5DE5;
+    --pink: #F72585;
+    --bg-dark: #FFFFFF;
+    --bg-light: #F8F9FA;
+    --text: #1A1A1F;
+    --text-muted: #64748b;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --border: #E2E8F0;
+    --glow: #FFD700;
+  }
+
+  /* Spider (Default - Elegant Light Theme) */
+  .theme-default {
+    --primary: #FF6B35;
+    --secondary: #E2E8F0;
+    --accent: #06D6A0;
+    --bg-dark: #FFFFFF;
+    --bg-light: #F8F9FA;
+    --text: #1A1A1F;
+    --text-muted: #64748b;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --border: #E2E8F0;
+  }
+
+  /* Panthère Rose (Light, Soft Pink Theme) */
+  .theme-pink {
+    --primary: #FF69B4;
+    --secondary: #FFB6C1;
+    --accent: #FF1493;
+    --blue: #87CEEB;
+    --purple: #DDA0DD;
+    --pink: #FF69B4;
+    --bg-dark: #FFF0F5;
+    --bg-light: #FFF5F7;
+    --text: #2c1810;
+    --text-muted: #8b5e5e;
+    --card-bg: rgba(255, 240, 245, 0.99);
+    --border: #FFB6C1;
+    --glow: #FF69B4;
+  }
+
+  /* Transformers (Autobots & Cybertron High-Tech Theme) */
+  .theme-transformers {
+    --primary: #E21B1B;
+    --secondary: #1E3A8A;
+    --accent: #F59E0B;
+    --blue: #2563EB;
+    --purple: #7C3AED;
+    --pink: #EC4899;
+    --bg-dark: #F1F5F9;
+    --bg-light: #E2E8F0;
+    --text: #0F172A;
+    --text-muted: #475569;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --border: #64748B;
+    --glow: #3B82F6;
+  }
+
+  /* Bikini Bottom (Sunny Beach Light Theme) */
+  .theme-bikini {
+    --primary: #00CED1;
+    --secondary: #FFD700;
+    --accent: #32CD32;
+    --blue: #1E90FF;
+    --purple: #9370DB;
+    --pink: #FF69B4;
+    --bg-dark: #87CEEB;
+    --bg-light: #E0F7FA;
+    --text: #003366;
+    --text-muted: #008B8B;
+    --card-bg: rgba(224, 247, 250, 0.99);
+    --border: #008B8B;
+    --glow: #00CED1;
+  }
+
+  /* Hotel Transylvania (Light Gothic Purple Theme) */
+  .theme-hotel {
+    --primary: #8B008B;
+    --secondary: #FF69B4;
+    --accent: #9400D3;
+    --blue: #4B0082;
+    --purple: #8B008B;
+    --pink: #FF1493;
+    --bg-dark: #F5EFFF;
+    --bg-light: #EADCFB;
+    --text: #3D1F5F;
+    --text-muted: #8B008B;
+    --card-bg: rgba(234, 220, 251, 0.95);
+    --border: #D3BDF0;
+    --glow: #FF69B4;
+  }
+
+  /* ==========================================================================
+     GLOBAL DARK MODE OVERRIDES & VARIABLES (THEME-SPECIFIC DARK SYSTEM)
+     ========================================================================== */
+
+  .dark-mode {
+    --bg-dark: #0B0F19 !important;
+    --bg-light: #151C2C !important;
+    --text: #F3F4F6 !important;
+    --text-muted: #9CA3AF !important;
+    --card-bg: rgba(21, 28, 44, 0.95) !important;
+    --border: #1F2937 !important;
+  }
+
+  .theme-default.dark-mode {
+    --primary: #FF6B35;
+    --secondary: #2D2D35;
+    --accent: #06D6A0;
+    --bg-dark: #111114;
+    --bg-light: #1A1A1F;
+    --text: #F8F9FA;
+    --text-muted: #94A3B8;
+    --card-bg: rgba(26, 26, 31, 0.98);
+    --border: #2D2D35;
+  }
+
+  .theme-pink.dark-mode {
+    --primary: #FF69B4;
+    --secondary: #FFB6C1;
+    --accent: #FF1493;
+    --bg-dark: #2D1420;
+    --bg-light: #3D1C2C;
+    --text: #FFEAF5;
+    --text-muted: #F472B6;
+    --card-bg: rgba(61, 28, 44, 0.98);
+    --border: #4D2034;
+  }
+
+  .theme-transformers.dark-mode {
+    --primary: #EF4444;
+    --secondary: #2563EB;
+    --accent: #F59E0B;
+    --bg-dark: #090D16;
+    --bg-light: #121B2E;
+    --text: #F8FAFC;
+    --text-muted: #94A3B8;
+    --card-bg: rgba(15, 23, 42, 0.98);
+    --border: #1E40AF;
+    --glow: #3B82F6;
+  }
+
+  .theme-bikini.dark-mode {
+    --primary: #00CED1;
+    --secondary: #FFD700;
+    --accent: #32CD32;
+    --bg-dark: #0B3A4F;
+    --bg-light: #144D66;
+    --text: #E0F2FE;
+    --text-muted: #38BDF8;
+    --card-bg: rgba(20, 77, 102, 0.98);
+    --border: #1B5E78;
+    --glow: #00CED1;
+  }
+
+  .theme-hotel.dark-mode {
+    --primary: #8B008B;
+    --secondary: #FF69B4;
+    --accent: #9400D3;
+    --bg-dark: #11051F;
+    --bg-light: #1C0A33;
+    --text: #F0E6FF;
+    --text-muted: #9400D3;
+    --card-bg: rgba(45, 26, 74, 0.98);
+    --border: #491E60;
+    --glow: #FF69B4;
+  }
+
+  /* Universal component dark mode fallbacks */
+  .dark-mode .bg-white,
+  .dark-mode .bg-amber-100/80,
+  .dark-mode .bg-teal-100/90,
+  .dark-mode .bg-sky-100/90,
+  .dark-mode .bg-indigo-50,
+  .dark-mode .bg-amber-50,
+  .dark-mode .bg-amber-50\/40,
+  .dark-mode .bg-teal-50\/40,
+  .dark-mode .bg-sky-50\/40,
+  .dark-mode .bg-blue-50 {
+    background-color: var(--bg-light) !important;
+    color: var(--text) !important;
+  }
+
+  .dark-mode .text-slate-900,
+  .dark-mode .text-gray-900,
+  .dark-mode .text-gray-800,
+  .dark-mode .text-slate-800,
+  .dark-mode .text-amber-800,
+  .dark-mode .text-amber-900,
+  .dark-mode .text-teal-850,
+  .dark-mode .text-orange-950,
+  .dark-mode .text-purple-950 {
+    color: var(--text) !important;
+  }
+
+  .dark-mode .text-gray-500,
+  .dark-mode .text-slate-500,
+  .dark-mode .text-slate-400,
+  .dark-mode .text-gray-400,
+  .dark-mode .text-slate-600,
+  .dark-mode .text-gray-650 {
+    color: var(--text-muted) !important;
+  }
+
+  .dark-mode .border-gray-100,
+  .dark-mode .border-gray-200,
+  .dark-mode .border-slate-200,
+  .dark-mode .border-amber-100\/70,
+  .dark-mode .border-teal-100,
+  .dark-mode .border-sky-100,
+  .dark-mode .border-orange-200,
+  .dark-mode .border-indigo-100,
+  .dark-mode .border-amber-200,
+  .dark-mode .border-purple-200,
+  .dark-mode .border-slate-100 {
+    border-color: var(--border) !important;
+  }
+
+  .dark-mode .bg-gray-50,
+  .dark-mode .bg-slate-50,
+  .dark-mode .bg-gray-100,
+  .dark-mode .bg-slate-100,
+  .dark-mode .bg-orange-50,
+  .dark-mode .bg-amber-50\/50,
+  .dark-mode .bg-indigo-50/50,
+  .dark-mode .bg-slate-50/50 {
+    background-color: var(--bg-light) !important;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    @apply antialiased transition-colors duration-500;
+  }
+}
+
+@layer components {
+  .seyes-paper {
+    background: var(--bg-light);
+    background-image: 
+      /* Red left margin */
+      linear-gradient(90deg, transparent 79px, #ef4444 79px, #ef4444 80px, transparent 80px),
+      /* Main lines */
+      linear-gradient(rgba(99, 102, 241, 0.4) 1.5px, transparent 1.5px),
+      /* Thin lines */
+      linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 32px, 100% 8px;
+    background-position: 0 0, 0 -1px, 0 -1px;
+    border: 2px solid var(--border);
+    border-radius: 24px;
+    margin: 24px 0;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.03), 0 10px 25px -5px rgba(0,0,0,0.1);
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .seyes-textarea {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 32px 32px 32px 100px;
+    line-height: 32px;
+    font-size: 24px;
+    font-family: inherit;
+    color: var(--text);
+    resize: none;
+    overflow: hidden;
+  }
+
+  .text-box {
+    background: var(--bg-light);
+    padding: 28px;
+    border-radius: 24px;
+    margin: 24px 0;
+    border: 2px solid var(--border);
+    border-left: 8px solid var(--primary);
+    text-align: justify;
+    line-height: 2;
+    font-size: 1.1rem;
+    color: var(--text);
+    box-shadow: 0 4px 15px -3px rgba(0,0,0,0.1);
+  }
+
+  .question-block {
+    background: var(--card-bg);
+    padding: 22px;
+    margin: 24px 0;
+    border-radius: 24px;
+    border: 2px solid var(--border);
+    border-left: 6px solid var(--blue);
+    color: var(--text);
+    box-shadow: 0 4px 10px -2px rgba(0,0,0,0.05);
+  }
+
+  .input-field {
+    display: inline-block;
+    min-width: 150px;
+    border-bottom: 2px solid var(--primary);
+    margin: 0 6px;
+    padding: 2px 8px;
+    background: var(--bg-light);
+    color: var(--text);
+  }
+
+  .web-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--bg-dark);
+    background-image: 
+      radial-gradient(circle at 20% 20%, var(--primary), transparent 25%),
+      radial-gradient(circle at 80% 80%, var(--blue), transparent 25%);
+    background-attachment: fixed;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  .exam-paper {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 40px;
+    padding: 48px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    color: var(--text);
+  }
+
+  .btn-primary {
+    @apply flex items-center gap-2 px-6 py-2.5 bg-[var(--primary)] text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-lg shadow-[var(--primary)]/30 hover:scale-105 active:scale-95 transition-all;
+  }
+
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 50%;
+  }
+
+  .dictee-floute {
+    filter: blur(12px);
+    opacity: 0.5;
+    user-select: none;
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+
+  @media (max-width: 640px) {
+    .exam-paper {
+      padding: 20px !important;
+      border-radius: 24px !important;
+    }
+    .seyes-paper {
+      min-height: 320px;
+      margin: 12px 0;
+      background-image: 
+        linear-gradient(90deg, transparent 39px, #ef4444 39px, #ef4444 40px, transparent 40px),
+        linear-gradient(rgba(99, 102, 241, 0.4) 1.5px, transparent 1.5px),
+        linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 24px, 100% 6px;
+    }
+    .seyes-textarea {
+      padding: 24px 16px 24px 50px !important;
+      font-size: 18px !important;
+      line-height: 24px !important;
+      min-height: 320px !important;
+    }
+    .text-box {
+      padding: 16px !important;
+      margin: 12px 0 !important;
+      font-size: 0.95rem !important;
+      line-height: 1.6 !important;
+    }
+    .question-block {
+      padding: 16px !important;
+      margin: 12px 0 !important;
+    }
+  }
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+
+  /* Masquer tous les éléments d'interface numérique inutile */
+  .no-print, 
+  header, 
+  aside, 
+  nav, 
+  button, 
+  select, 
+  input[type="password"],
+  .particle, 
+  .fixed,
+  .auto-save-indicator {
+    display: none !important;
+  }
+
+  /* Forcer le rendu papier propre */
+  body, .bg-slate-900, .bg-slate-950 {
+    background: white !important;
+    color: black !important;
+  }
+
+  .bg-indigo-600 {
+    background-color: #4f46e5 !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .text-box, .question-block, .bg-[#111114], .bg-[#1A1A1F] {
+    background-color: #f8fafc !important;
+    color: black !important;
+    border: 1px solid #cbd5e1 !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Optimiser les cadres de texte et bordures */
+  .border, .border-slate-800 {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+  }
+
+  .dictee-floute {
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  .seyes-paper {
+    border: 1px solid #ccc !important;
+  }
+
+  /* Mettre en valeur la production écrite finale de l'élève */
+  textarea {
+    border: none !important;
+    background: transparent !important;
+    color: black !important;
+    width: 100% !important;
+    height: auto !important;
+    font-size: 14px !important;
+  }
+
+  .diploma-paper {
+    border: 12px double var(--primary) !important;
+    background: white !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    padding: 2.5rem !important;
+    border-radius: 24px !important;
+    margin: 0 auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "L'Odyssée des Mots 🚀 Jugurtha",
+  "description": "Une aventure interactive d'apprentissage pour les élèves de 4ème année à l'École Jugurtha — lecture, écriture, dictée et défis d'évaluation motivants !",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

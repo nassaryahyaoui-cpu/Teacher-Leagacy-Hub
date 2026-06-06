@@ -1,0 +1,9 @@
+{
+  "appId": "tn.jugurtha.odysseedesmots",
+  "appName": "L'Odyssée des Mots Jugurtha",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "allowNavigation": []
+  }
+}
